@@ -18,7 +18,7 @@ pipeline {
     }
     stage('SCM') {
       steps {
-        git branch: 'main', url: 'https://github.com/Sampaati/RDS-scripts.git'
+        git branch: 'main', credentialsId: 'Sharathholla98PAT', url: 'https://github.com/Sharathholla/RDS-scripts.git'
       }
     }
     stage('Liuibase update SQL and validte') {
