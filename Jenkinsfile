@@ -34,7 +34,7 @@ pipeline {
       }
       steps {
         script {
-          sh 'liquibase status --url="jdbc:mariadb://$(endpoint)/${schema}" --changeLogFile=./${schema}/changelogFile.xml --username=$RDS_Mysql_CREDS_USR --password=$RDS_Mysql_CREDS_PSW'
+          sh 'liquibase status --url="jdbc:mariadb://${endpoint}/${schema}" --changeLogFile=./${schema}/changelogFile.xml --username=$RDS_Mysql_CREDS_USR --password=$RDS_Mysql_CREDS_PSW'
           echo "#######################################"
           echo "#########checking ####################"
           env.Proceed = input message: 'User input required',
